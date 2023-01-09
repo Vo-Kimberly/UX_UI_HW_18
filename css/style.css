@@ -1,9 +1,14 @@
 body {
     background-color: #F5ECE1;
   }
+h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
 h1 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     text-align: center;
+    padding: 50px; 
   }
   
   /* Navigation styles */
@@ -35,50 +40,103 @@ h1 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     cursor: pointer;
   }
+
+    /* Bio styles */
+    .bio {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      margin: 0 auto;
+      padding: 70px 0;
+      align-items: center;
+    }
+    
+    .Heroimage{
+      height: 40%;
+      width: 33%;
+      display: flex;
+      margin-bottom: 20px;
+      margin-top:20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 20px;
+      padding: 20px 40px;
+      color: black;
+      text-align: center;
+    }
+    
+    .resume{
+      background-color: #D2B3F9;
+      border: none;
+      color:black;
+      font-size: 16px;
+      padding: 15px;
+      width: 25%;
+      border-radius: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
   
-  /* Row styles: My UX skills */
-  .row {
-    display: flex;
-    height: 350px;
-    width: 100%;
-    flex-direction: row;
-    margin: 0 auto;
+  /* Grid styles: My Work */
+  .grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 33% 33% 33%;
+    margin: 20px 20px;
     justify-content: center;
+    grid-template-areas:
+    "pic1 content1"
+    "pic2 content2"
+    "pic3 content3" 
   }
   
-  .skill1, .skill2, .skill3 {
+  .work1 {
+    grid-area: content1;
     height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: stretch;
-    margin: 20px;
-    background-size: cover;
-  }
-  .skill1 {
-    background-image: url("../images/research.jpg");
-    background-repeat: no-repeat;
-    background-position: center;  
-  }
-  .skill2 {
-    background-image: url("../images/compassion3.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .skill3 {
-    background-image: url("../images/Interview.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
+    object-fit: cover;
   }
   
+  .pic1 img{
+    grid-area: pic1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work2 {
+    grid-area: content2;
+    height: 100%;
+    object-fit: cover;
+  }
+  .pic2 img {
+    grid-area: pic2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .work3 {
+    grid-area: content3;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .pic3 img{
+    grid-area: pic3;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .text {
-    background: rgb(0,0,0,0.7);
     width: 100%;
     padding: 10px 20px;
-    color: white;
-    text-align: center;
+    color: black;
   }
   .text p {
-    color: rgba(255, 255, 255, 0.7);
+    color: black;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
   .text h1 {
@@ -130,7 +188,56 @@ h1 {
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
     transform: translateY(0);
   }
+  /* Row styles: My UX skills */
+  .row {
+    display: flex;
+    height: 350px;
+    width: 100%;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+  }
   
+  .skill1, .skill2, .skill3 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    margin: 20px;
+    background-size: cover;
+  }
+  .skill1 {
+    background-image: url("../images/research.jpg");
+    background-repeat: no-repeat;
+    background-position: center;  
+  }
+  .skill2 {
+    background-image: url("../images/compassion3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .skill3 {
+    background-image: url("../images/Interview.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .text_skill {
+    background: rgb(0,0,0,0.7);
+    width: 100%;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+  }
+  .text_skill p {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .text_skill h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  
+
   /* Background cicle styles */
   .circle1{
       width:2000px;
@@ -186,10 +293,21 @@ h1 {
   }
 
 @media only screen and (max-width: 600px){
-    .row {
-      flex-direction: column;
-    }
-    .skill1, .skill2, .skill3 {
-      width: 100%;
-    }
+  .grid {
+    grid-template-rows: 300px 300px 300px 300px 300px 300px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "pic1"
+      "content1"
+      "pic2"
+      "content2"
+      "pic3"
+      "content3"
+  }
+  .row {
+    flex-direction: column;
+  }
+  .skill1, .skill2, .skill3 {
+    width: 100%;
+  }
 }
